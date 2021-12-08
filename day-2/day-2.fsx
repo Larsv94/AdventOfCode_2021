@@ -5,7 +5,7 @@ let readLines filePath = File.ReadLines(filePath)
 let split (a: char) (s: string) = s.Split(a)
 let input = readLines "./input.txt"
 
-let getInstructions input = input |> Seq.map (split ' ')
+let getInstructions input = input |> Seq.map (split ' ') 
 
 
 
@@ -50,8 +50,8 @@ let challenge2: seq<string> -> int64 * int64 * int64 =
     getParsedInstructions
     >> Seq.fold directionFromAim (0, 0, 0)
 
-let (horizontal, depth, aim) = challenge2 input
+let (horizontal, depth, _) = challenge2 input
 
 let answer2 = horizontal * depth
 
-printfn "Solution part 1: %d" answer2
+printfn "Solution part 2: %d" answer2
